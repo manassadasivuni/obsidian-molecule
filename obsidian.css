@@ -144,6 +144,8 @@ color: var(--interactive-accent-hover) !important;
   color: var(--inline-code);
 }
 
+/* Fancy horizontal lines (---) by TriDiamond (https://github.com/TriDiamond/) */
+
 .markdown-preview-view hr {
   border: none;
   height: 0;
