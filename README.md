@@ -6,6 +6,14 @@ The Molecule theme for Obsidian. Light mode only
 ![Screenshot 2](images/Screenshot2.png)
 ![Screenshot 3](images/Screenshot3.png)
 
+# Update log
+## 1.0
+- Initial release
+
+## 1.1
+- Removed Andy mode
+- Changed colour of resize handle bars
+
 ## Installation
 1. Download the `obsidian.css` file and put into your vault
 2. In Obsidian, make sure Custom CSS is turned on (Settings --> Plugins)
