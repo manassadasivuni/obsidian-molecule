@@ -14,6 +14,9 @@ The Molecule theme for Obsidian. Light mode only
 - Removed Andy mode
 - Changed colour of resize handle bars
 
+## 1.2
+- Fixed background colour when moving a pane
+
 ## Installation
 1. Download the `obsidian.css` file and put into your vault
 2. In Obsidian, make sure Custom CSS is turned on (Settings --> Plugins)

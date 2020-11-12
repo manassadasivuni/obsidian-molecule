@@ -7,15 +7,13 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.1
-Last release date: 9th November 2020 
+Version: 1.2
+Last release date: 12th November 2020 
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
 
 Inspired by the Atom theme by Kognise (https://github.com/kognise)
-
-THEME IS LIGHT-MODE ONLY
 
 */
 
@@ -32,7 +30,10 @@ THEME IS LIGHT-MODE ONLY
   --text-muted: #555555;
   --text-highlight-bg: #a4e7c3;
   --text-selection: #B8D9F4;
+  --interactive-normal: #5aa17b;
+  --interactive-hover: #45795d;
   --interactive-accent: #5aa17b;
+  --interactive-accent-rgb: 164, 231, 195;
   --interactive-accent-hover: #45795d;
 
   --inline-code: var(--text-muted);
@@ -78,20 +79,22 @@ blockquote {
 
 /* ========== */
 
-.workspace-ribbon .side-dock-ribbon .mod-right .is-collapsed{
-  color: var(--background-primary-alt);
+body{
+  -webkit-font-smoothing: auto;
 }
 
-.workspace-ribbon .side-dock-ribbon .mod-right{
-  color: var(--background-primary-alt); 
+.theme-light .token.operator,
+.theme-light .token.entity,
+.theme-light .token.url,
+.theme-light .language-css .token.string,
+.theme-light .style .token.string {
+  background: transparent;
 }
 
-.workspace-ribbon .side-dock-ribbon .mod-left .is-collapsed{
-  color: var(--background-primary-alt);
-}
-
-.workspace-ribbon .side-dock-ribbon .mod-left{
-  color: var(--background-primary-alt); 
+body:not(.is-grabbing) .nav-file:not(.is-active) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
+  --text-normal: var(--text-muted);
+  --background-secondary-alt: var(--background-secondary);
 }
 
 .workspace-tab-header-container{
@@ -136,6 +139,14 @@ color: var(--interactive-accent-hover) !important;
   color: var(--background-primary);
   background: var(--interactive-accent);
 }
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section,
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width: 900px !important;
+  line-height: 26px;
+}
+
+
 
 /* ========== */
 /* Preview */
