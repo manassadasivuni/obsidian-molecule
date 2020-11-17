@@ -7,13 +7,11 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.2
-Last release date: 12th November 2020 
+Version: 1.3
+Last release date: 17th November 2020 
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
-
-Inspired by the Atom theme by Kognise (https://github.com/kognise)
 
 */
 
@@ -24,6 +22,14 @@ Inspired by the Atom theme by Kognise (https://github.com/kognise)
   --background-secondary-alt: #eeeeee;
   --background-accent: #5aa17b;
   --background-modifier-border: #dddddd;
+  --background-modifier-form-field: #fff;
+  --background-modifier-form-field-highlighted: #fff;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+  --background-modifier-success: #A4E7C3;
+  --background-modifier-error: #990000;
+  --background-modifier-error-rgb: 230, 135, 135;
+  --background-modifier-error-hover: #bb0000;
+  --background-modifier-cover: rgba(0, 0, 0, 0.8);
   --text-accent: #5aa17b;
   --text-accent-hover: #45795d;
   --text-normal: #000000;
@@ -140,13 +146,15 @@ color: var(--interactive-accent-hover) !important;
   background: var(--interactive-accent);
 }
 
+.suggestion-item.is-selected .suggestion-hotkey{
+  color: var(--text-normal)
+}
+
 .markdown-preview-view.is-readable-line-width .markdown-preview-section,
 .markdown-source-view.is-readable-line-width .CodeMirror {
   max-width: 900px !important;
   line-height: 26px;
 }
-
-
 
 /* ========== */
 /* Preview */
@@ -295,3 +303,24 @@ ul ul::before {
   text-decoration: none;
   color: inherit;
 }
+
+/* obsidian-calendar-plugin */
+/* https://github.com/liamcain/obsidian-calendar-plugin */
+
+#calendar-container {
+  --color-background-heading: transparent;
+
+  --color-background-day: transparent;
+  --color-background-day-empty: var(--background-secondary-alt);
+  --color-background-day-active: var(--interactive-accent);
+  --color-background-day-hover: var(--interactive-hover);
+
+  --color-dot: var(--text-muted);
+  --color-arrow: currentColor;
+
+  --color-text-title: var(--text-normal);
+  --color-text-heading: var(--text-normal);
+  --color-text-day: var(--text-normal);
+  --color-text-today: var(--text-normal);
+}
+
