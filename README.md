@@ -23,6 +23,9 @@ The Molecule theme for Obsidian. Light mode only
 ## 1.4 
 - Tweaked graph colours
 
+## 1.5
+- Centered images
+
 ## Installation
 1. Download the `obsidian.css` file and put into your vault
 2. In Obsidian, make sure Custom CSS is turned on (Settings --> Plugins)

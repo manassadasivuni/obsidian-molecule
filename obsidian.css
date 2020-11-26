@@ -7,8 +7,8 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.4
-Last release date: 23rd November 2020 
+Version: 1.5
+Last release date: 26th November 2020 
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -88,6 +88,13 @@ button:hover{
 blockquote {
   margin-inline-start: 0;
 }
+
+img
+{
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+} 
 
 /* ========== */
 
