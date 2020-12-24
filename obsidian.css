@@ -7,8 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.5
-Last release date: 26th November 2020 
+Version: 1.6
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -43,6 +42,7 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
   --interactive-accent-hover: #45795d;
 
   --inline-code: var(--text-muted);
+  --code-background: ;
   
 }
 
@@ -77,11 +77,11 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
 /* ========== */
 /* Element-wide styles */
 
-button{
+button {
   background-color: var(--background-primary-alt);
 }
 
-button:hover{
+button:hover {
   background-color: var(--background-secondary-alt);
 }
 
@@ -89,12 +89,38 @@ blockquote {
   margin-inline-start: 0;
 }
 
-img
-{
+blockquote:before {
+  font: 14px/20px italic Times, serif;
+  content: "“";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+
+blockquote p { 
+  display: inline; 
+}
+
+img {
     display: block !important;
     margin-left: auto !important;
     margin-right: auto !important;
 } 
+
+a,
+.cm-hmd-internal-link
+{
+color: var(--interactive-accent) !important;
+text-decoration: none !important;
+}
+
+a:hover,
+.cm-hmd-internal-link:hover,
+.cm-url
+{
+color: var(--interactive-accent-hover) !important;
+text-decoration: none !important;
+}
 
 /* ========== */
 
@@ -169,6 +195,16 @@ color: var(--interactive-accent-hover) !important;
   line-height: 26px;
 }
 
+.nav-file.is-active > .nav-file-title{
+  background-color: var(--interactive-accent);
+  color: var(--background-primary)
+}
+
+.nav-file.is-active > .nav-file-title:hover {
+  background-color: var(--interactive-accent-hover);
+  color: var(--background-primary);
+}
+
 /* ========== */
 /* Preview */
 
@@ -202,13 +238,18 @@ color: var(--interactive-accent-hover) !important;
 /* ========== */
 /* Edit */
 .cm-s-obsidian pre.HyperMD-codeblock,
-.cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian span.cm-math:not(.cm-formatting-math-begin):not(.cm-formatting-math-end),
+.cm-s-obsidian span.cm-math,
 .markdown-preview-view code {
-  color: inherit;
+  font-weight: 600;
+  background-color: #eeeeee;
 }
 
-.cm-s-obsidian span.cm-inline-code,
+.cm-s-obsidian span.cm-inline-code {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--inline-code);
+}
+
 .cm-s-obsidian span.cm-math,
 .cm-s-obsidian span.hmd-fold-math-placeholder {
   font-weight: 600;
@@ -312,6 +353,30 @@ ul ul::before {
   bottom: 0;
 }
 
+/* Click & hold images to increase size */
+.markdown-preview-view .internal-embed img {
+	cursor:zoom-in;}
+
+.markdown-preview-view .internal-embed img:active {
+	cursor:zoom-out;
+	display:block;
+	z-index:100;
+	position:fixed;
+    max-height:100%;
+    max-width:100%;
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    margin:0 auto;
+    text-align:center;
+    top: 50%;
+  	transform: translateY(-50%);
+    padding:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:var(--background-primary);}
+
 /* Removing strikethrough from completed to-do lists */
 .markdown-preview-view ul > li.task-list-item.is-checked {
   text-decoration: none;
@@ -337,4 +402,3 @@ ul ul::before {
   --color-text-day: var(--text-normal);
   --color-text-today: var(--text-normal);
 }
-
