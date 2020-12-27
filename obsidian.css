@@ -7,13 +7,10 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.2
-Last release date: 12th November 2020 
+Version: 1.6
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
-
-Inspired by the Atom theme by Kognise (https://github.com/kognise)
 
 */
 
@@ -24,10 +21,18 @@ Inspired by the Atom theme by Kognise (https://github.com/kognise)
   --background-secondary-alt: #eeeeee;
   --background-accent: #5aa17b;
   --background-modifier-border: #dddddd;
+  --background-modifier-form-field: #fff;
+  --background-modifier-form-field-highlighted: #fff;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+  --background-modifier-success: #A4E7C3;
+  --background-modifier-error: #990000;
+  --background-modifier-error-rgb: 230, 135, 135;
+  --background-modifier-error-hover: #bb0000;
+  --background-modifier-cover: rgba(0, 0, 0, 0.8);
   --text-accent: #5aa17b;
   --text-accent-hover: #45795d;
   --text-normal: #000000;
-  --text-muted: #555555;
+  --text-muted: #444444;
   --text-highlight-bg: #a4e7c3;
   --text-selection: #B8D9F4;
   --interactive-normal: #5aa17b;
@@ -37,6 +42,7 @@ Inspired by the Atom theme by Kognise (https://github.com/kognise)
   --interactive-accent-hover: #45795d;
 
   --inline-code: var(--text-muted);
+  --code-background: ;
   
 }
 
@@ -44,17 +50,23 @@ Inspired by the Atom theme by Kognise (https://github.com/kognise)
 /* Graph colours*/
 .graph-view.color-circle,
 .graph-view.color-fill-highlight,
-.graph-view.color-line-highlight
-{
+.graph-view.color-line-highlight{
     color: #666666 !important;    
 }
 
-.graph-view.color-text
-{
+.graph-view.color-fill-attachment{
+  color: var(--text-highlight-bg) !important;
+}
+
+.graph-view.color-fill-tag{
+  color: var(--interactive-accent) !important;
+}
+
+.graph-view.color-text{
     color: var(--text-normal) !important;
 }
 
-.graph-view.color-line {
+.graph-view.color-line{
     color: rgba(0, 0, 0, 0.25);
 }
 
@@ -65,16 +77,49 @@ Inspired by the Atom theme by Kognise (https://github.com/kognise)
 /* ========== */
 /* Element-wide styles */
 
-button{
+button {
   background-color: var(--background-primary-alt);
 }
 
-button:hover{
+button:hover {
   background-color: var(--background-secondary-alt);
 }
 
 blockquote {
   margin-inline-start: 0;
+}
+
+blockquote:before {
+  font: 14px/20px italic Times, serif;
+  content: "“";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+
+blockquote p { 
+  display: inline; 
+}
+
+img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+} 
+
+a,
+.cm-hmd-internal-link
+{
+color: var(--interactive-accent) !important;
+text-decoration: none !important;
+}
+
+a:hover,
+.cm-hmd-internal-link:hover,
+.cm-url
+{
+color: var(--interactive-accent-hover) !important;
+text-decoration: none !important;
 }
 
 /* ========== */
@@ -140,13 +185,25 @@ color: var(--interactive-accent-hover) !important;
   background: var(--interactive-accent);
 }
 
+.suggestion-item.is-selected .suggestion-hotkey{
+  color: var(--text-normal)
+}
+
 .markdown-preview-view.is-readable-line-width .markdown-preview-section,
 .markdown-source-view.is-readable-line-width .CodeMirror {
   max-width: 900px !important;
   line-height: 26px;
 }
 
+.nav-file.is-active > .nav-file-title{
+  background-color: var(--interactive-accent);
+  color: var(--background-primary)
+}
 
+.nav-file.is-active > .nav-file-title:hover {
+  background-color: var(--interactive-accent-hover);
+  color: var(--background-primary);
+}
 
 /* ========== */
 /* Preview */
@@ -180,12 +237,23 @@ color: var(--interactive-accent-hover) !important;
 
 /* ========== */
 /* Edit */
-.cm-s-obsidian span.cm-inline-code, .cm-s-obsidian pre.HyperMD-codeblock{
+.cm-s-obsidian pre.HyperMD-codeblock,
+.cm-s-obsidian span.cm-math,
+.markdown-preview-view code {
+  font-weight: 600;
+  background-color: #eeeeee;
+}
+
+.cm-s-obsidian span.cm-inline-code {
+  font-weight: 600;
+  font-style: normal;
   color: var(--inline-code);
 }
 
-.cm-s-obsidian span.cm-math:not(.cm-formatting-math-begin):not(.cm-formatting-math-end){
-  color: var(--inline-code);
+.cm-s-obsidian span.cm-math,
+.cm-s-obsidian span.hmd-fold-math-placeholder {
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Bigger link popup preview */
@@ -230,11 +298,6 @@ color: var(--interactive-accent-hover) !important;
   right: 2px;
   bottom: 2px;
   -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 14 14\'%3E%3Cpolygon points=\'5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039\'%3E%3C/polygon%3E%3C/svg%3E');
-}
-
-/* Removes the title bar */
-.is-frameless {
-  padding-top:0px !important;
 }
 
 /* Fixing numbered lists */
@@ -290,8 +353,52 @@ ul ul::before {
   bottom: 0;
 }
 
+/* Click & hold images to increase size */
+.markdown-preview-view .internal-embed img {
+	cursor:zoom-in;}
+
+.markdown-preview-view .internal-embed img:active {
+	cursor:zoom-out;
+	display:block;
+	z-index:100;
+	position:fixed;
+    max-height:100%;
+    max-width:100%;
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    margin:0 auto;
+    text-align:center;
+    top: 50%;
+  	transform: translateY(-50%);
+    padding:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:var(--background-primary);}
+
 /* Removing strikethrough from completed to-do lists */
 .markdown-preview-view ul > li.task-list-item.is-checked {
   text-decoration: none;
   color: inherit;
+}
+
+/* obsidian-calendar-plugin */
+/* https://github.com/liamcain/obsidian-calendar-plugin */
+
+#calendar-container {
+  --color-background-heading: transparent;
+
+  --color-background-day: transparent;
+  --color-background-day-empty: var(--background-secondary-alt);
+  --color-background-day-active: var(--interactive-accent);
+  --color-background-day-hover: var(--interactive-hover);
+
+  --color-dot: var(--text-muted);
+  --color-arrow: currentColor;
+
+  --color-text-title: var(--text-normal);
+  --color-text-heading: var(--text-normal);
+  --color-text-day: var(--text-normal);
+  --color-text-today: var(--text-normal);
 }
