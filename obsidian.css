@@ -7,7 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.6
+Version: 1.7
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -182,7 +182,7 @@ color: var(--interactive-accent-hover) !important;
 
 .suggestion-item.is-selected .suggestion-note, .suggestion-item.is-selected{
   color: var(--background-primary);
-  background: var(--interactive-accent);
+  background: var(--interactive-accent-hover);
 }
 
 .suggestion-item.is-selected .suggestion-hotkey{
