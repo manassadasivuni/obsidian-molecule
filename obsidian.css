@@ -7,7 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.7
+Version: 1.8
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -33,7 +33,7 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
   --text-accent-hover: #45795d;
   --text-normal: #000000;
   --text-muted: #444444;
-  --text-highlight-bg: #a4e7c3;
+  --text-highlight-bg: #4FFFB0;
   --text-selection: #B8D9F4;
   --interactive-normal: #5aa17b;
   --interactive-hover: #45795d;
