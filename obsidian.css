@@ -114,6 +114,12 @@ color: var(--interactive-accent-hover) !important;
 text-decoration: none !important;
 }
 
+.math-block > mjx-container[jax="CHTML"] {
+  font-size: 125%;
+}
+
+
+
 /* ========== */
 
 body{
