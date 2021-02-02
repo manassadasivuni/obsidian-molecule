@@ -89,14 +89,6 @@ blockquote {
   margin-inline-start: 0;
 }
 
-blockquote:before {
-  font: 14px/20px italic Times, serif;
-  content: "“";
-  font-size: 3em;
-  line-height: 0.1em;
-  vertical-align: -0.4em;
-}
-
 blockquote p { 
   display: inline; 
 }
@@ -233,6 +225,26 @@ color: var(--interactive-accent-hover) !important;
   padding: 0.5rem;
   color: var(--text-muted);
   background-color: var(--background-primary);
+}
+
+.cm-s-obsidian span.cm-quote {
+  color: unset;
+  background: unset;
+}
+
+.markdown-preview-view blockquote {
+  background: var(--background-secondary-alt); 
+  border-radius: unset;
+  border: unset;
+  padding: 10px;
+  margin: unset;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--interactive-accent) !important;
+}
+
+.markdown-preview-view blockquote p {
+  margin: 0 10px;
 }
 
 /* ========== */
