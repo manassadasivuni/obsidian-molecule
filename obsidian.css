@@ -7,7 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.9
+Version: 1.10
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -16,7 +16,7 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
 
 .theme-light{
   --background-primary: #ffffff;
-  --background-primary-alt: #ffffff;
+  --background-primary-alt: #eeeeee;
   --background-secondary: #ffffff;
   --background-secondary-alt: #eeeeee;
   --background-accent: #5aa17b;
@@ -266,18 +266,13 @@ color: var(--interactive-accent-hover) !important;
 /* ========== */
 /* Edit */
 .cm-s-obsidian pre.HyperMD-codeblock,
-.cm-s-obsidian span.cm-math,
+.cm-s-obsidian span.cm-inline-code,
+.cm-s-obsidian span.cm-math:not(.cm-formatting-math-begin):not(.cm-formatting-math-end),
 .markdown-preview-view code {
-  font-weight: 600;
-  background-color: #eeeeee;
+  color: inherit;
 }
 
-.cm-s-obsidian span.cm-inline-code {
-  font-weight: 600;
-  font-style: normal;
-  color: var(--inline-code);
-}
-
+.cm-s-obsidian span.cm-inline-code,
 .cm-s-obsidian span.cm-math,
 .cm-s-obsidian span.hmd-fold-math-placeholder {
   font-weight: 600;
