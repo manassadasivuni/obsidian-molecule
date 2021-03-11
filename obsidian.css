@@ -148,8 +148,12 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   --background-secondary-alt: var(--background-secondary);
 }
 
-.workspace-tab-header-container{
-  color: var(--background-primary-alt)
+.workspace-tab-header-container {
+  color: var(--background-primary)
+}
+
+.workspace-leaf.mod-active .view-header {
+  background-color: var(--background-primary);
 }
 
 .workspace-tab-header.is-active{
