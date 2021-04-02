@@ -7,28 +7,22 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.10
+Version: 1.11
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
 
 */
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 .theme-light{
   --background-primary: #ffffff;
-  --background-primary-alt: #eeeeee;
+  --background-primary-alt: #ffffff;
   --background-secondary: #ffffff;
   --background-secondary-alt: #eeeeee;
   --background-accent: #5aa17b;
-  --background-modifier-border: #dddddd;
-  --background-modifier-form-field: #fff;
-  --background-modifier-form-field-highlighted: #fff;
-  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
   --background-modifier-success: #A4E7C3;
-  --background-modifier-error: #990000;
-  --background-modifier-error-rgb: 230, 135, 135;
-  --background-modifier-error-hover: #bb0000;
-  --background-modifier-cover: rgba(0, 0, 0, 0.8);
   --text-accent: #5aa17b;
   --text-accent-hover: #45795d;
   --text-normal: #000000;
@@ -41,48 +35,25 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
   --interactive-accent-rgb: 164, 231, 195;
   --interactive-accent-hover: #45795d;
 
-  --inline-code: var(--text-muted);
-  --code-background: ;
-  
-}
-
-/* ========== */
-/* Graph colours*/
-.graph-view.color-circle,
-.graph-view.color-fill-highlight,
-.graph-view.color-line-highlight{
-    color: #666666 !important;    
-}
-
-.graph-view.color-fill-attachment{
-  color: var(--text-highlight-bg) !important;
-}
-
-.graph-view.color-fill-tag{
-  color: var(--interactive-accent) !important;
-}
-
-.graph-view.color-text{
-    color: var(--text-normal) !important;
-}
-
-.graph-view.color-line{
-    color: rgba(0, 0, 0, 0.25);
-}
-
-.graph-view.color-fill{
-    color: #111111;
+  --green-accent: #4FFFB0;
+  --light-green-accent: #5CFFB6;
+  --purple-accent: #8269FF;
+  --red-accent: #FF5136;
+  --code-block-background: #eee;
 }
 
 /* ========== */
 /* Element-wide styles */
-
-button {
-  background-color: var(--background-primary-alt);
+body {
+  -webkit-font-smoothing: auto;
+  --font-monospace: 'JetBrains Mono', 'Source Code Pro', monospace;
 }
 
-button:hover {
-  background-color: var(--background-secondary-alt);
+
+mjx-container[jax='CHTML'] {
+  text-align: left;
+  outline: none;
+  font-size: 20px;
 }
 
 blockquote {
@@ -100,17 +71,15 @@ img {
 } 
 
 a,
-.cm-hmd-internal-link
-{
+.cm-hmd-internal-link, .cm-url {
 color: var(--interactive-accent) !important;
 text-decoration: none !important;
 }
 
 a:hover,
 .cm-hmd-internal-link:hover,
-.cm-url
-{
-color: var(--interactive-accent-hover) !important;
+.cm-url {
+color: var(--purple-accent) !important;
 text-decoration: none !important;
 }
 
@@ -127,12 +96,127 @@ text-decoration: none !important;
   margin: 0px 0px;
 }
 
-
 /* ========== */
-
-body{
-  -webkit-font-smoothing: auto;
+/* Graph colours*/
+.graph-view.color-circle,
+.graph-view.color-fill-highlight,
+.graph-view.color-line-highlight {
+    color: var(--light-green-accent);    
 }
+
+.graph-view.color-fill-attachment {
+  color: var(--purple-accent) !important;
+  opacity: 0.6;
+}
+
+.graph-view.color-fill-tag {
+  color: var(--green-accent) !important;
+  opacity: 0.6;
+}
+
+.graph-view.color-fill-unresolved {
+  color: var(--red-accent);
+}
+
+.graph-view.color-text {
+    color: var(--text-normal);
+}
+
+.graph-view.color-line {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.graph-view.color-fill {
+    color: #111111;
+}
+
+.markdown-preview-view .task-list-item-checkbox {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border: 1px solid var(--text-muted);
+  border-radius: 2px;
+  position: relative;
+  width: 1.3em;
+  height: 1.3em;
+  margin: 0;
+  filter: none;
+  outline: none;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked {
+  border: none;
+  background-color: var(--interactive-accent);
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked::before {
+  content: ' ';
+  position: absolute;
+  background-color: white;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 14 14\'%3E%3Cpolygon points=\'5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039\'%3E%3C/polygon%3E%3C/svg%3E');
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section,
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width: 900px !important;
+  line-height: 26px;
+}
+
+
+/* Code block background color */
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--code-block-background);
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock,
+.cm-s-obsidian span.cm-inline-code,
+.cm-s-obsidian span.cm-math:not(.cm-formatting-math-begin):not(.cm-formatting-math-end),
+.markdown-preview-view code {
+  color: inherit;
+}
+
+.cm-s-obsidian span.cm-inline-code,
+.cm-s-obsidian span.cm-math,
+.cm-s-obsidian span.hmd-fold-math-placeholder {
+  font-weight: 600;
+  font-style: normal;
+}
+
+.markdown-preview-view code {
+  vertical-align: text-top;
+  word-break: break-word;
+}
+
+.markdown-preview-section:not(:first-child) h1,
+.markdown-preview-section:not(:first-child) h2,
+.markdown-preview-section:not(:first-child) h3,
+.markdown-preview-section:not(:first-child) h4,
+.markdown-preview-section:not(:first-child) h5,
+.markdown-preview-section:not(:first-child) h6 {
+  margin-top: 40px !important;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b, .view-header-title {
+  font-weight: 600;
+}
+
+.nav-file.is-active {
+  --background-secondary-alt: var(--interactive-accent);
+  --text-normal: #ffffff;
+}
+
+.nav-file:not(.is-active):hover .nav-file-title,
+.nav-folder:hover .nav-folder-content {
+  background-color: transparent;
+}
+
 
 .theme-light .token.operator,
 .theme-light .token.entity,
@@ -148,95 +232,13 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   --background-secondary-alt: var(--background-secondary);
 }
 
-.workspace-tab-header-container {
-  color: var(--background-primary)
-}
-
-.workspace-leaf.mod-active .view-header {
-  background-color: var(--background-primary);
-}
-
-.workspace-tab-header.is-active{
-  color: var(--interactive-accent);
-}
-
-.markdown-preview-view .markdown-embed { border:none; padding:0; margin:0; }
-.markdown-preview-view .markdown-embed-content { 
-  max-height: unset;
-  background-color: var(--background-primary);
-}
-
-.markdown-embed-link {
-  color: var(--text-faint) !important;
-  }
-
-.markdown-embed-link:hover {
-color: var(--interactive-accent-hover) !important;
-}
-
-.workspace-leaf-resize-handle:hover{
-  background-color: var(--interactive-accent);
-}
-
-.search-result-file-title{
-  color: var(--text-accent)
-}
-
-.search-result-file-title:hover{
-  color: var(--text-accent-hover)
-}
-
-.nav-file-title, .nav-folder-title{
-  color:var(--text-muted);
-}
-
-.suggestion-item.is-selected .suggestion-note, .suggestion-item.is-selected{
-  color: var(--background-primary);
-  background: var(--interactive-accent-hover);
-}
-
-.suggestion-item.is-selected .suggestion-hotkey{
-  color: var(--text-normal)
-}
-
-.markdown-preview-view.is-readable-line-width .markdown-preview-section,
-.markdown-source-view.is-readable-line-width .CodeMirror {
-  max-width: 900px !important;
-  line-height: 26px;
-}
-
-.nav-file.is-active > .nav-file-title{
-  background-color: var(--interactive-accent);
-  color: var(--background-primary)
-}
-
-.nav-file.is-active > .nav-file-title:hover {
-  background-color: var(--interactive-accent-hover);
-  color: var(--background-primary);
-}
-
-.modal-bg {
-  background-color: var(--background-accent);
-  opacity: 75%;
-}
-
-
-/* ========== */
-/* Preview */
-
-.markdown-preview-view code{
-  color: var(--inline-code);
-}
-
-/* Fancy horizontal lines (---) by TriDiamond (https://github.com/TriDiamond/) */
-
 .markdown-preview-view hr {
   border: none;
   height: 0;
   border-bottom: 1px solid;
   border-image-slice: 1;
   border-width: 1px;
-  border-image-source: linear-gradient(to right, transparent, var(--text-accent), transparent);
+  border-image-source: linear-gradient(to right, transparent, var(--red-accent), transparent);
 }
 
 .markdown-preview-view hr::after {
@@ -260,99 +262,11 @@ color: var(--interactive-accent-hover) !important;
   margin: unset;
   margin-top: 10px;
   margin-bottom: 20px;
-  border-left: 4px solid var(--interactive-accent) !important;
+  border-left: 4px solid var(--purple-accent) !important;
 }
 
 .markdown-preview-view blockquote p {
   margin: 0 10px;
-}
-
-/* ========== */
-/* Edit */
-.cm-s-obsidian pre.HyperMD-codeblock,
-.cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian span.cm-math:not(.cm-formatting-math-begin):not(.cm-formatting-math-end),
-.markdown-preview-view code {
-  color: inherit;
-}
-
-.cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian span.cm-math,
-.cm-s-obsidian span.hmd-fold-math-placeholder {
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* Bigger link popup preview */
-.popover.hover-popover {
-  max-height: 800px;    /* was 300 */
-  min-height: 100px;
-  width: 500px;     /* was 400 */
-}
-
-
-/* ==== CSS Tweaks - delete whichever parts you don't want ==== */
-
-/* Better checkboxes */
-.markdown-preview-view .task-list-item-checkbox {
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  border: 1px solid var(--text-muted);
-  border-radius: 2px;
-  position: relative;
-  width: 1.3em;
-  height: 1.3em;
-  margin: 0;
-  filter: none;
-  outline: none;
-  margin-right: 4px;
-  margin-bottom: 1px;
-  cursor: pointer;
-  vertical-align: center;
-}
-
-.markdown-preview-view .task-list-item-checkbox:checked {
-  border: none;
-  background-color: var(--interactive-accent);
-}
-
-.markdown-preview-view .task-list-item-checkbox:checked::before {
-  content: ' ';
-  position: absolute;
-  background-color: white;
-  left: 2px;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 14 14\'%3E%3Cpolygon points=\'5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039\'%3E%3C/polygon%3E%3C/svg%3E');
-}
-
-/* Fixing numbered lists */
-ol {
-  list-style-type: none;
-  counter-reset: item;
-  margin: 0;
-  padding: 0;
-}
-
-ol > li {
-  display: table;
-  counter-increment: item;
-  margin-bottom: 0.6em;
-}
-
-ol > li:before {
-  content: counters(item, ".") ". ";
-  display: table-cell;
-  padding-right: 0.6em;    
-}
-
-li ol > li {
-  margin: 0;
-}
-
-li ol > li:before {
-  content: counters(item, ".") " ";
 }
 
 /* trace indentation lines by death_au */
@@ -380,52 +294,18 @@ ul ul::before {
   bottom: 0;
 }
 
-/* Click & hold images to increase size */
-.markdown-preview-view .internal-embed img {
-	cursor:zoom-in;}
-
-.markdown-preview-view .internal-embed img:active {
-	cursor:zoom-out;
-	display:block;
-	z-index:100;
-	position:fixed;
-    max-height:100%;
-    max-width:100%;
-    height:100%;
-    width:100%;
-    object-fit: contain;
-    margin:0 auto;
-    text-align:center;
-    top: 50%;
-  	transform: translateY(-50%);
-    padding:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:var(--background-primary);}
-
-/* Removing strikethrough from completed to-do lists */
-.markdown-preview-view ul > li.task-list-item.is-checked {
-  text-decoration: none;
-  color: inherit;
+/*  Fix suggested item */
+.suggestion-item.is-selected .suggestion-note, .suggestion-item.is-selected{
+  color: var(--background-primary);
+  background: var(--interactive-accent);
 }
 
-/* obsidian-calendar-plugin */
-/* https://github.com/liamcain/obsidian-calendar-plugin */
+.suggestion-item.is-selected .suggestion-hotkey{
+  color: var(--text-normal)
+}
 
-#calendar-container {
-  --color-background-heading: transparent;
-
-  --color-background-day: transparent;
-  --color-background-day-empty: var(--background-secondary-alt);
-  --color-background-day-active: var(--interactive-accent);
-  --color-background-day-hover: var(--interactive-hover);
-
-  --color-dot: var(--text-muted);
-  --color-arrow: currentColor;
-
-  --color-text-title: var(--text-normal);
-  --color-text-heading: var(--text-normal);
-  --color-text-day: var(--text-normal);
-  --color-text-today: var(--text-normal);
+/* Change background overlay */
+.modal-bg {
+  background-color: var(--background-accent);
+  opacity: 0.75;
 }
