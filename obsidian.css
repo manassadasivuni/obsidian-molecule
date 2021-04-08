@@ -7,7 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.11
+Version: 1.12
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -308,4 +308,11 @@ ul ul::before {
 .modal-bg {
   background-color: var(--background-accent);
   opacity: 0.75;
+}
+
+/* Increases link popup preview */
+.popover.hover-popover {
+  max-height: 1000px;    /* was 300 */
+  min-height: 100px;
+  width: 600px;     /* was 400 */
 }
