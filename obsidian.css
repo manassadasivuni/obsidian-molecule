@@ -7,7 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.12
+Version: 1.13
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -39,7 +39,7 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
   --light-green-accent: #5CFFB6;
   --purple-accent: #8269FF;
   --red-accent: #FF5136;
-  --code-block-background: #eee;
+  --code-block-background: #eeeeee;
 }
 
 /* ========== */
@@ -48,7 +48,6 @@ body {
   -webkit-font-smoothing: auto;
   --font-monospace: 'JetBrains Mono', 'Source Code Pro', monospace;
 }
-
 
 mjx-container[jax='CHTML'] {
   text-align: left;
@@ -70,15 +69,12 @@ img {
     margin-right: auto !important;
 } 
 
-a,
-.cm-hmd-internal-link, .cm-url {
+a, .cm-hmd-internal-link, .cm-url {
 color: var(--interactive-accent) !important;
 text-decoration: none !important;
 }
 
-a:hover,
-.cm-hmd-internal-link:hover,
-.cm-url {
+a:hover, .cm-hmd-internal-link:hover, .cm-url:hover {
 color: var(--purple-accent) !important;
 text-decoration: none !important;
 }
@@ -94,6 +90,15 @@ text-decoration: none !important;
   display: inline-block;
   text-align: center;
   margin: 0px 0px;
+}
+
+.tag:hover {
+  background-color: var(--purple-accent);
+  color: var(--background-primary-alt) !important;
+}
+
+p {
+  text-align: justify;
 }
 
 /* ========== */
@@ -315,4 +320,43 @@ ul ul::before {
   max-height: 1000px;    /* was 300 */
   min-height: 100px;
   width: 600px;     /* was 400 */
+}
+
+/* Fixes icons being same as highlight colour when selected */
+.suggestion-item.qsp-symbol-l0.is-selected .qsp-symbol-indicator, 
+.suggestion-item.qsp-symbol-l1.is-selected .qsp-symbol-indicator,
+.suggestion-item.qsp-symbol-l2.is-selected .qsp-symbol-indicator,
+.suggestion-item.qsp-symbol-l3.is-selected .qsp-symbol-indicator,
+.suggestion-item.qsp-symbol-l4.is-selected .qsp-symbol-indicator,
+.suggestion-item.qsp-symbol-l5.is-selected .qsp-symbol-indicator,
+.suggestion-item.qsp-symbol-l6.is-selected .qsp-symbol-indicator {
+  color: var(--background-primary-alt)
+}
+
+/* Fixes find and replace button colours */
+.document-search-button {
+  background-color: var(--interactive-normal);
+  color: var(--background-primary-alt);
+}
+
+/* Enlarge image on hover */
+.markdown-preview-view img {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;  /* experiment with values */
+  transition:transform 0.25s ease;
+}
+
+.markdown-preview-view img:hover {
+    -webkit-transform:scale(2); /* experiment with values */
+    transform:scale(2);
+}
+
+/* center tables */
+.markdown-preview-view table {
+  margin-right: auto;
+  margin-left: auto;
 }
