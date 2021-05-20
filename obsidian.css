@@ -7,7 +7,7 @@
  #+#       #+#    #+#    #+#      #+#        #+#             #+#    #+#     #+#    #+#       #+#        #+#
 ###       ###     ########       ########## ##########       ########       ########        ########## ##########
 
-Version: 1.13
+Version: 1.14
 Check for releases: https://github.com/manassadasivuni/obsidian-molecule
 
 Made by Manas Sadasivuni (https://links.manassadasivuni.com)
@@ -15,6 +15,11 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
 */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+:root {
+    --default-font: 'JetBrains Mono' !important;
+}
 
 .theme-light{
   --background-primary: #ffffff;
@@ -46,7 +51,7 @@ Made by Manas Sadasivuni (https://links.manassadasivuni.com)
 /* Element-wide styles */
 body {
   -webkit-font-smoothing: auto;
-  --font-monospace: 'JetBrains Mono', 'Source Code Pro', monospace;
+  --font-monospace: 'Space Mono', 'Source Code Pro', monospace;
 }
 
 mjx-container[jax='CHTML'] {
@@ -274,31 +279,6 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   margin: 0 10px;
 }
 
-/* trace indentation lines by death_au */
-.cm-hmd-list-indent .cm-tab,
-ul ul {
-  position: relative;
-}
-
-.cm-hmd-list-indent .cm-tab::before,
-ul ul::before {
-  content: '';
-  border-left: 2px solid var(--background-modifier-border);
-  position: absolute;
-}
-
-.cm-hmd-list-indent .cm-tab::before {
-  left: 0;
-  top: -5px;
-  bottom: -4px;
-}
-
-ul ul::before {
-  left: -15px;
-  top: 0;
-  bottom: 0;
-}
-
 /*  Fix suggested item */
 .suggestion-item.is-selected .suggestion-note, .suggestion-item.is-selected{
   color: var(--background-primary);
@@ -346,12 +326,12 @@ ul ul::before {
   margin-bottom: 20pt;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;  /* experiment with values */
+  width: 50%;
   transition:transform 0.25s ease;
 }
 
 .markdown-preview-view img:hover {
-    -webkit-transform:scale(2); /* experiment with values */
+    -webkit-transform:scale(2);
     transform:scale(2);
 }
 
