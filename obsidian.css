@@ -319,22 +319,6 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   color: var(--background-primary-alt);
 }
 
-/* Enlarge image on hover */
-.markdown-preview-view img {
-  display: block;
-  margin-top: 20pt;
-  margin-bottom: 20pt;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  transition:transform 0.25s ease;
-}
-
-.markdown-preview-view img:hover {
-    -webkit-transform:scale(2);
-    transform:scale(2);
-}
-
 /* center tables */
 .markdown-preview-view table {
   margin-right: auto;
